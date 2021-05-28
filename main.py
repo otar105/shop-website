@@ -219,7 +219,7 @@ def remove_message(id):
     con.close()
 
 def delete_order_code(code):
-    sql = f"delete from orders where code = '{code}'"
+    sql = f"delete from orders where code = '{code}';"
     con = sqlite3.connect("date.db")
     cur = con.cursor()
     cur.execute(sql)
