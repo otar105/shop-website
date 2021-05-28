@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&family=Poppins:ital,wght@1,200&display=swap');
+h2{
+    font-family: 'Poppins', sans-serif;
+}
+
+p{
+    font-family: 'Pattaya', sans-serif;
+}

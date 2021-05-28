@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        .container{
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/orders">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Contact Us</a>
+          <form action="/contact" method="post">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Contuct Us</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label>Name</label>
+                      <input type="text" name = "names" class ="form-control" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Email address</label>
+                      <input type="email" name ="email" class ="form-control" placeholder="Enter email" required>
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label>Type your message here</label>
+                      <textarea name="text" cols="10" rows="4" class="form-control" placeholder="Your message" required></textarea>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<div class="wrapper" style="background-color: black;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="/product/2"><img src="https://icity.ge/wp-content/uploads/2021/05/90.001.webp" class="d-block w-100" alt="..." style="height: 400px;"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="/product/3"><img src="https://icity.ge/wp-content/uploads/2021/05/%E1%83%90%E1%83%98%E1%83%A0%E1%83%A2%E1%83%94%E1%83%92.webp" class="d-block w-100" alt="..." style="height: 400px;"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="/product/7"><img src="https://icity.ge/wp-content/uploads/2021/05/73-4.002.webp" class="d-block w-100" alt="..." style="height: 400px;"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+              <h2>Phones</h2>
+            <div class="list-group" id="list-tab" role="tablist">
+                <a href="/phones" class="list-group-item list-group-item-action active">Phone</a>
+                <a href="/headphones" class="list-group-item list-group-item-action">Headphones</a>
+                <a href="/computers" class="list-group-item list-group-item-action">Computers</a>
+                <a href="/tv" class="list-group-item list-group-item-action">TV</a>
+            </div>
+          </div>
+            {% for i in phones: %}
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{i[2]}}" class="card-img-top" alt="..." style="height: 300px;">
+                    <div class="card-body">
+                        <a href="/product/{{i[0]}}"><h5 class="card-title">{{i[1]}}</h5></a>
+                        <p class="card-text"><b>{{i[4]}}$</b></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
