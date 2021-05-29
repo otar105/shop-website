@@ -93,7 +93,7 @@ def edit_save_page():
     price = request.args.get("price")
     groups = request.args.get("groups")
     stock = request.args.get("stock")
-    print(ededid)
+    print(editid)
     edit(editid,name,image,description,price, groups, stock)
     return redirect("/admin")
 
